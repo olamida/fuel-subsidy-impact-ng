@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Transport Support Initiative</title>
+  <meta name="description" content="Live dashboard.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body x-data="siteApp">
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Transport <span>Support</span> Initiative</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="programs.html">Programs</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="survey.html" class="nav-cta">Take 3-Min Survey</a>
+      </nav>
+      <button class="menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  <!-- Hero -->
+  <section class="hero" style="min-height: 50vh;">
+    <div class="hero-bg" style="background-image: url('assets/images/placeholder-abuja.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Dashboard</h1>
+      <p class="lead">Live, anonymized public indicators of transport impact across Nigeria.</p>
+    </div>
+  </section>
+
+  <section class="section dashboard">
+    <div class="container">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="section-title mb-12">Key Indicators</h2>
+        <p class="section-subtitle mb-12 max-w-3xl">Aggregated data from the field.</p>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-12">
+          <div class="card p-8 text-center">
+            <p class="text-sm text-muted mb-1">Total Responses</p>
+            <p class="text-4xl font-bold text-green" id="total-responses">--</p>
+          </div>
+          <div class="card p-8 text-center">
+            <p class="text-sm text-muted mb-1">Organizations Reached</p>
+            <p class="text-4xl font-bold text-green" id="orgs-reached">--</p>
+          </div>
+          <div class="card p-8 text-center">
+            <p class="text-sm text-muted mb-1">Avg Daily Cost</p>
+            <p class="text-4xl font-bold text-green" id="avg-cost">--</p>
+          </div>
+          <div class="card p-8 text-center">
+            <p class="text-sm text-muted mb-1">Very Interested</p>
+            <p class="text-4xl font-bold text-green" id="very-interested">--</p>
+          </div>
+        </div>
+        <div class="grid gap-8 lg:grid-cols-2">
+          <div class="card p-6">
+            <h3 class="text-lg font-bold text-green mb-4">Daily Transport Cost (N)</h3>
+            <canvas id="chart-daily-cost"></canvas>
+          </div>
+          <div class="card p-6">
+            <h3 class="text-lg font-bold text-green mb-4">Cost Increase After Subsidy</h3>
+            <canvas id="chart-cost-increase"></canvas>
+          </div>
+        </div>
+        <div class="grid gap-8 mt-8 lg:grid-cols-2">
+          <div class="card p-6">
+            <h3 class="text-lg font-bold text-green mb-4">Interest in Ride-Share</h3>
+            <canvas id="chart-interest"></canvas>
+          </div>
+          <div class="card p-6">
+            <h3 class="text-lg font-bold text-green mb-4">What Builds Trust?</h3>
+            <canvas id="chart-trust-features"></canvas>
+          </div>
+        </div>
+        <div class="grid gap-8 mt-8 lg:grid-cols-2">
+          <div class="card p-6">
+            <h3 class="text-lg font-bold text-green mb-4">Responses by Corridor</h3>
+            <canvas id="chart-corridors"></canvas>
+          </div>
+          <div class="card p-6">
+            <h3 class="text-lg font-bold text-green mb-4">Employer Support</h3>
+            <canvas id="chart-employer-support"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo" style="font-size:1.1rem;">Transport <span>Support</span> Initiative</a>
+        <p class="mt-3 text-sm" style="max-width:300px;">Researching fuel subsidy removal impact on Nigerian transport. Supporting organizations, homes, schools & NGOs in Abuja.</p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="programs.html">Programs</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="survey.html">Survey</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+      <div class="footer-contact">
+        <p>Email <span>olandasolutions@gmail.com</span></p>
+        <p>Technical pilot partner: WorkRide</p>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Transport Support Initiative. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>

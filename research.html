@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research | Transport Support Initiative</title>
+  <meta name="description" content="Research methodology on the condition and effect of fuel subsidy removal on Nigerian organizations and homes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body x-data="siteApp">
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Transport <span>Support</span> Initiative</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="programs.html">Programs</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="survey.html" class="nav-cta">Take 3-Min Survey</a>
+      </nav>
+      <button class="menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" x-cloak>
+    <a href="index.html" class="block py-2" @click="mobileMenuOpen = false">Home</a>
+    <a href="about.html" class="block py-2" @click="mobileMenuOpen = false">About</a>
+    <a href="research.html" class="block py-2" @click="mobileMenuOpen = false">Research</a>
+    <a href="programs.html" class="block py-2" @click="mobileMenuOpen = false">Programs</a>
+    <a href="dashboard.html" class="block py-2" @click="mobileMenuOpen = false">Dashboard</a>
+    <a href="survey.html" class="block py-2 nav-cta">Take 3-Min Survey</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" style="min-height: 50vh;">
+    <div class="hero-bg" style="background-image: url('assets/images/placeholder-abuja.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Research: Condition and Effect on Nigerian Organizations and Homes</h1>
+      <p class="lead">Fuel subsidy removal and its impact on transport — documented through the voices of Nigerian organizations, families, schools, and civil society.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="max-w-5xl mx-auto">
+
+        <h2 class="section-title">Methodology</h2>
+        <p class="section-subtitle">How we heard from Nigerians across the country.</p>
+        <div class="card p-16">
+          <ul class="list-decimal pl-6 mt-4 space-y-4">
+            <li class="flex gap-4">
+              <span class="font-bold text-green w-8">1</span>
+              <p><strong>Anonymous 3-minute bus stop intercept</strong> at key corridors: Berger, Nyanya, Kubwa — between 6am and 8am, when commuters are heading to work.</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="font-bold text-green w-8">2</span>
+              <p><strong>8-minute MDA staff survey</strong> distributed through HR departments and WhatsApp groups of targeted government and public sector offices.</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="font-bold text-green w-8">3</span>
+              <p><strong>Target sample:</strong> 250–400 respondents, stratified by corridor (Kubwa, Nyanya/Mararaba, Lugbe, Gwarinpa) and employment type.</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="font-bold text-green w-8">4</span>
+              <p><strong>Data collection:</strong> Anonymous Google Forms, with no identifying questions. All data stored in encrypted, access-controlled Google Sheets.</p>
+            </li>
+          </ul>
+        </div>
+
+        <h2 class="section-title mt-24">Key Research Questions</h2>
+        <div class="card p-16">
+          <ul class="space-y-4">
+            <li class="flex gap-3">
+              <span class="text-green font-bold w-8">Q1</span>
+              <p>How has fuel subsidy removal changed daily transport costs for Nigerian organizations and households?</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-green font-bold w-8">Q2</span>
+              <p>What coping strategies are being used, and where are they failing?</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-green font-bold w-8">Q3</span>
+              <p>What would make verified, affordable ride-share work for Nigerian organizations?</p>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-green font-bold w-8">Q4</span>
+
+        <h2 class="section-title mt-24">Data Use & Protection</h2>
+        <p class="section-subtitle">Your voice matters — and your privacy is protected.</p>
+        <div class="card p-16">
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-1 text-green"><polyline points="20 6 9 17 4 12"/></svg>
+              <p>Data is collected <strong>for research only</strong>. We do not sell or share individual responses.</p>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-1 text-green"><polyline points="20 6 9 17 4 12"/></svg>
+              <p>Responses are <strong>anonymous</strong> unless you choose to volunteer contact information for follow-up.</p>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-1 text-green"><polyline points="20 6 9 17 4 12"/></svg>
+              <p>You can request <strong>deletion of your data</strong> at any time by emailing olandasolutions@gmail.com.</p>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-1 text-green"><polyline points="20 6 9 17 4 12"/></svg>
+              <p>All findings are published anonymized — no individual or organization is identified without explicit consent.</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo" style="font-size:1.1rem;">Transport <span>Support</span> Initiative</a>
+        <p class="mt-3 text-sm" style="max-width:300px;">Researching fuel subsidy removal impact on Nigerian transport. Supporting organizations, homes, schools & NGOs in Abuja.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="survey.html">Survey</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+      <div class="footer-contact">
+        <p>Email <span>olandasolutions@gmail.com</span></p>
+        <p>Technical pilot partner: WorkRide</p>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Transport Support Initiative. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

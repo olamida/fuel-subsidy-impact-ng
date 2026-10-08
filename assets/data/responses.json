@@ -1,0 +1,31 @@
+{
+  "total_responses": 127,
+  "last_updated": "2026-05-12T08:00:00Z",
+  "orgs_reached": 18,
+  "avg_cost": 1850,
+  "interest_pct": 72,
+  "daily_cost": {
+    "labels": ["Under 500", "500-999", "1000-1499", "1500-2499", "2500+"],
+    "data": [5, 18, 42, 35, 27]
+  },
+  "cost_increase": {
+    "labels": ["<50%", "50-100%", "100-200%", ">200%"],
+    "data": [10, 28, 52, 37]
+  },
+  "interest": {
+    "labels": ["Very Interested", "Interested", "Not Interested"],
+    "data": [72, 23, 5]
+  },
+  "trust_features": {
+    "labels": ["Office ID", "NIN+Face", "Live Tracking", "SOS", "Female-only", "Insurance", "Ratings", "Same Office"],
+    "data": [68, 55, 72, 60, 45, 38, 40, 52]
+  },
+  "corridors": {
+    "labels": ["Kubwa", "Nyanya/Mararaba", "Lugbe", "Gwarinpa", "Lokogoma"],
+    "data": [38, 42, 22, 15, 10]
+  },
+  "employer_support": {
+    "labels": ["Very Likely", "Maybe", "Not Likely"],
+    "data": [68, 22, 10]
+  }
+}

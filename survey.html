@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey | Transport Support Initiative</title>
+  <meta name="description" content="Take the 3-minute anonymous survey.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body x-data="siteApp">
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Transport <span>Support</span> Initiative</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="programs.html">Programs</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="survey.html" class="nav-cta">Take 3-Min Survey</a>
+      </nav>
+      <button class="menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  <!-- Hero -->
+  <section class="hero" style="min-height: 50vh;">
+    <div class="hero-bg" style="background-image: url('assets/images/placeholder-abuja.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Take the 3-Minute Survey</h1>
+      <p class="lead">Your voice shapes research on how fuel subsidy removal affects transport. Completely anonymous.</p>
+    </div>
+  </section>
+
+  <!-- Survey intro -->
+  <section class="section bg-paper">
+    <div class="container">
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="text-muted mb-6">Your information will be kept confidential and anonymous. All questions are optional unless marked required. Estimated completion time: 3 minutes.</p>
+        <div class="card p-10">
+          <p class="text-green font-semibold mb-4">What we will do with your data</p>
+          <ul class="list-disc pl-6 space-y-2 text-sm text-muted">
+            <li>Analyze responses anonymously to understand transport challenges after fuel subsidy removal.</li>
+            <li>Share findings with organizations, schools, and policymakers to support practical solutions.</li>
+            <li>Never sell or share your personal information.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Survey form -->
+  <section class="section">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+
+        <div class="card p-10">
+          <h2 class="text-xl font-bold text-green mb-6">Survey Questions</h2>
+          <form id="surveyForm" class="mailto-form">
+
+            <div class="mb-6">
+              <label class="block text-sm font-bold text-green mb-2">1. Which transport corridor do you primarily use? <span class="text-red">*</span></label>
+              <select name="corridor" required class="w-full p-4 border border-gray rounded-lg">
+                <option value="">Select a corridor</option>
+                <option value="Kubwa">Kubwa</option>
+                <option value="Nyanya / Mararaba">Nyanya / Mararaba</option>
+                <option value="Lugbe">Lugbe</option>
+                <option value="Gwarinpa">Gwarinpa</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm font-bold text-green mb-2">2. Your employment type</label>
+              <select name="employment" class="w-full p-4 border border-gray rounded-lg">
+                <option value="">Select</option>
+                <option value="Public Sector Employee">Public Sector Employee</option>
+                <option value="Private Sector Employee">Private Sector Employee</option>
+                <option value="Self-Employed / Business Owner">Self-Employed / Business Owner</option>
+                <option value="Student">Student</option>
+                <option value="Unemployed">Unemployed</option>
+                <option value="Retiree">Retiree</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm font-bold text-green mb-2">3. Approximate monthly transport cost (in Naira)</label>
+              <input type="number" name="monthlyCost" min="0" class="w-full p-4 border border-gray rounded-lg">
+              <p class="text-xs text-muted mt-1">If you prefer not to share, please estimate.</p>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm font-bold text-green mb-2">4. How has fuel subsidy removal changed your transport costs? <span class="text-red">*</span></label>
+              <select name="costChange" required class="w-full p-4 border border-gray rounded-lg">
+                <option value="">Select an option</option>
+                <option value="Costs increased significantly (over 50%)">Costs increased significantly (over 50%)</option>
+                <option value="Costs increased moderately (25-50%)">Costs increased moderately (25-50%)</option>
+                <option value="Costs increased slightly (up to 25%)">Costs increased slightly (up to 25%)</option>
+                <option value="Costs stayed about the same">Costs stayed about the same</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm font-bold text-green mb-2">5. Would you be willing to pay a slightly higher fare for a verified, reliable ride-share service?</label>
+              <select name="rideShareWillingness" class="w-full p-4 border border-gray rounded-lg">
+                <option value="">Select an option</option>
+                <option value="Yes, definitely">Yes, definitely</option>
+                <option value="Maybe">Maybe</option>
+                <option value="No, not at all">No, not at all</option>
+              </select>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm font-bold text-green mb-2">6. What would make you trust a ride-share or transport support service? <span class="text-red">*</span></label>
+              <select name="trust" required class="w-full p-4 border border-gray rounded-lg">
+                <option value="">Select an option</option>
+                <option value="Verified/background-checked drivers">Verified/background-checked drivers</option>
+                <option value="Clear safety standards">Clear safety standards</option>
+                <option value="Transparent pricing">Transparent pricing</option>
+                <option value="App-based tracking">App-based tracking</option>
+                <option value="Organizational verification">Organizational verification</option>
+              </select>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm font-bold text-green mb-2">7. Would your employer support the cost of your transport (e.g., transport allowance or service)?</label>
+              <select name="employerSupport" class="w-full p-4 border border-gray rounded-lg">
+                <option value="">Select an option</option>
+                <option value="Yes, my employer already does this">Yes, my employer already does this</option>
+                <option value="Yes, my employer would consider it">Yes, my employer would consider it</option>
+                <option value="No, my employer would not">No, my employer would not</option>
+              </select>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm font-bold text-green mb-2">8. Any additional comments? (Optional)</label>
+              <textarea name="comments" rows="4" class="w-full p-4 border border-gray rounded-lg"></textarea>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn-primary" style="min-height:56px; padding: 12px 32px; border-radius: 8px; font-size: 1.05rem;">Submit Survey</button>
+            </div>
+            <p class="text-xs text-muted mt-4">By submitting, you agree to participate anonymously.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo" style="font-size:1.1rem;">Transport <span>Support</span> Initiative</a>
+        <p class="mt-3 text-sm" style="max-width:300px;">Researching fuel subsidy removal impact on Nigerian transport. Supporting organizations, homes, schools & NGOs in Abuja.</p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="programs.html">Programs</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="survey.html">Survey</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+      <div class="footer-contact">
+        <p>Email <span>olandasolutions@gmail.com</span></p>
+        <p>Technical pilot partner: WorkRide</p>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Transport Support Initiative. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
