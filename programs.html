@@ -11,7 +11,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <link rel="stylesheet" href="assets/css/style.css?v=3">
 </head>
 <body x-data="siteApp">
   <header class="site-header">
@@ -29,10 +29,21 @@
         <span></span><span></span><span></span>
       </button>
     </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" :class="{ 'open': mobileMenuOpen }" x-cloak>
+    <a href="index.html" class="block py-2" @click="mobileMenuOpen = false">Home</a>
+    <a href="about.html" class="block py-2" @click="mobileMenuOpen = false">About</a>
+    <a href="research.html" class="block py-2" @click="mobileMenuOpen = false">Research</a>
+    <a href="programs.html" class="block py-2" @click="mobileMenuOpen = false">Programs</a>
+    <a href="dashboard.html" class="block py-2" @click="mobileMenuOpen = false">Dashboard</a>
+    <a href="survey.html" class="block py-2 nav-cta">Take 3-Min Survey</a>
+  </div>
 
   <!-- Hero -->
   <section class="hero" style="min-height: 50vh;">
-    <div class="hero-bg" style="background-image: url('assets/images/placeholder-abuja.jpg');"></div>
+    <div class="hero-bg" style="background-image: url('assets/images/cc0Ai.jpg');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Our Programs</h1>
@@ -120,3 +131,4 @@
 
   <script src="assets/js/main.js" defer></script>
 </body>
+</html>

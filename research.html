@@ -11,7 +11,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <link rel="stylesheet" href="assets/css/style.css?v=3">
 </head>
 <body x-data="siteApp">
 
@@ -32,7 +32,7 @@
     </div>
   </header>
 
-  <div class="mobile-menu" x-cloak>
+  <div class="mobile-menu" :class="{ 'open': mobileMenuOpen }" x-cloak>
     <a href="index.html" class="block py-2" @click="mobileMenuOpen = false">Home</a>
     <a href="about.html" class="block py-2" @click="mobileMenuOpen = false">About</a>
     <a href="research.html" class="block py-2" @click="mobileMenuOpen = false">Research</a>
@@ -43,7 +43,7 @@
 
   <!-- Hero -->
   <section class="hero" style="min-height: 50vh;">
-    <div class="hero-bg" style="background-image: url('assets/images/placeholder-abuja.jpg');"></div>
+    <div class="hero-bg" style="background-image: url('assets/images/cc0Ai.jpg');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Research: Condition and Effect on Nigerian Organizations and Homes</h1>
@@ -95,6 +95,10 @@
             </li>
             <li class="flex gap-3">
               <span class="text-green font-bold w-8">Q4</span>
+              <p>How do transport burdens differ across corridors, income levels, and institution types?</p>
+            </li>
+          </ul>
+        </div>
 
         <h2 class="section-title mt-24">Data Use & Protection</h2>
         <p class="section-subtitle">Your voice matters — and your privacy is protected.</p>

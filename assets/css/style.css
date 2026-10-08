@@ -152,4 +152,32 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Sora','Segoe UI',sans-serif; font-weight: 700;
 .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-8); max-width: var(--max-width); margin: 0 auto; }
 .step { text-align: center; padding: var(--space-10); }
 .step-number { width: 48px; height: 48px; border-radius: 50%; background: var(--green-light); color: var(--green); font-family: 'Sora',sans-serif; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4); }
+/* Location badge */
+.location-badge { position: absolute; bottom: var(--space-8); right: var(--space-8); z-index: 2; }
+/* Footer */
+.site-footer { background: #0c3a10; color: rgba(255,255,255,0.85); padding: var(--space-16) var(--space-4) var(--space-8); margin-top: var(--space-16); }
+.footer-grid { max-width: var(--max-width); margin: 0 auto var(--space-8); display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--space-8); }
+.footer-grid .logo { color: var(--white); }
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { color: rgba(255,255,255,0.75); font-size: 0.92rem; }
+.footer-links a:hover { color: var(--gold); }
+.footer-contact p { font-size: 0.9rem; margin-bottom: 6px; }
+.footer-contact span { color: var(--gold); font-weight: 600; }
+.copyright { text-align: center; padding-top: var(--space-6); border-top: 1px solid rgba(255,255,255,0.12); font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+/* CTA + FAQ + misc */
+.cta-banner { max-width: var(--max-width); margin: 0 auto; background: linear-gradient(135deg, var(--green) 0%, #2e7d32 100%); color: var(--white); border-radius: var(--radius-xl); padding: var(--space-16) var(--space-8); text-align: center; box-shadow: var(--glass-shadow); }
+.cta-banner h2 { color: var(--white); margin-bottom: var(--space-4); }
+.cta-banner p { color: rgba(255,255,255,0.9); }
+.faq-item { border: 1px solid #e2e8f0; border-radius: var(--radius-md); margin-bottom: var(--space-4); overflow: hidden; background: var(--white); }
+.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); padding: var(--space-5) var(--space-6); background: none; border: none; cursor: pointer; font-weight: 600; text-align: left; color: var(--slate); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-item.open .faq-answer { max-height: 400px; }
+.faq-answer p { padding: 0 var(--space-6) var(--space-6); color: var(--text-muted); font-size: 0.95rem; }
+.faq-toggle { font-size: 1.4rem; color: var(--green); flex-shrink: 0; transition: transform 0.25s ease; }
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.prose p { margin-bottom: var(--space-5); color: var(--text-muted); line-height: 1.8; }
+.page-hero-img { width: 100%; max-height: 420px; object-fit: cover; border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.mailto-form label { display: block; }
+.mailto-form input, .mailto-form select, .mailto-form textarea { font-family: inherit; font-size: 0.95rem; }
+[x-cloak] { display: none !important; }
 
